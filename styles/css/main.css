@@ -1,0 +1,69 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --blue: #6c63ff;
+  --black: #1d1d29;
+  --gray: #2f2e41;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--black);
+}
+
+*[icon]::before {
+  content: attr(icon);
+  font-family: "Material Icons";
+  font-size: 1.2em;
+  float: left;
+}
+
+div.card {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: min(250px, 50%);
+  background-color: var(--gray);
+  box-shadow: 0 0 8px 0 #00000088;
+  overflow: hidden;
+  border-radius: 1em;
+  --rx: 0deg;
+  --ry: 0deg;
+  transform: translate(-50%, -50%) perspective(1000px) rotateX(0deg) rotateY(0deg);
+  transition: transform 0.2s;
+}
+div.card:hover {
+  transform: translate(-50%, -50%) perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry));
+}
+div.card img {
+  width: 100%;
+  margin-bottom: 0.5em;
+}
+div.card div.info {
+  background-color: #6c63ff;
+  padding: 1em;
+}
+div.card div.info p {
+  text-align: justify;
+  opacity: 0.8;
+  margin-top: 0.5em;
+}
+div.card div.links {
+  padding: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+div.card div.links a {
+  opacity: 0.8;
+}
+div.card div.links a:hover, div.card div.links a:active, div.card div.links a:focus {
+  opacity: 1;
+}
